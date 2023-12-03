@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Browser ID3 Writer Demo</title>
+    <link href="css/bootstrap.min.css?v=462" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container mb-3">
+      <h1>Browser ID3 Writer Demo</h1>
+      <p>
+        JavaScript library for writing <b>ID3 (v2.3)</b> tag to MP3 files in
+        browsers (without server) and Node.js.<br />
+        <a href="https://github.com/egoroof/browser-id3-writer"
+          >Documentation and source code on GitHub</a
+        >. Also take a look at <a href="stream.html">a demo with streams</a>.
+      </p>
+      <form id="form">
+        <div class="form-group">
+          <label for="song">MP3 file</label>
+          <input
+            type="file"
+            id="song"
+            accept="audio/mpeg"
+            required="required"
+            class="form-control-file"
+          />
+        </div>
+        <ul class="nav nav-tabs mb-3" id="tabsControl">
+          <li class="nav-item">
+            <a class="nav-link active" href="#main">Song</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#album">Album</a></li>
+          <li class="nav-item"><a class="nav-link" href="#other">Other</a></li>
+        </ul>
+        <div id="tabMain">
+          <div class="form-group">
+            <label for="TIT2">Song title</label>
+            <input type="text" id="TIT2" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="TPE1"
+              >Song artists (use char ; to separate artists)</label
+            >
+            <input type="text" id="TPE1" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="TCOM"
+              >Song composers (use char ; to separate composers)</label
+            >
+            <input type="text" id="TCOM" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="TCON"
+              >Song genres (use char ; to separate genres)</label
+            >
+            <input type="text" id="TCON" class="form-control" />
+          </div>
+        </div>
+        <div id="tabAlbum" class="d-none">
+          <div class="form-group">
+            <label for="TALB">Album title</label>
+            <input type="text" id="TALB" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="TPE2">Album artist</label>
+            <input type="text" id="TPE2" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="TRCK">Song number in album (5 or 5/10)</label>
+            <input type="text" id="TRCK" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="TPOS">Album disc number (1 or 1/3)</label>
+            <input type="text" id="TPOS" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="TYER">Album release year</label>
+            <input type="number" id="TYER" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="APIC">Album cover</label>
+            <input
+              type="file"
+              id="APIC"
+              accept="image/*"
+              class="form-control-file"
+            />
+          </div>
+        </div>
+        <div id="tabOther" class="d-none">
+          <div class="form-group">
+            <label for="TPUB">Label name</label>
+            <input type="text" id="TPUB" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="USLT">Lyrics</label>
+            <textarea id="USLT" class="form-control" rows="5"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Add tag and save file
+        </button>
+        <button type="reset" class="btn btn-secondary">Reset form</button>
+      </form>
+    </div>
+    <script src="js/FileSaver.2.0.4.min.js"></script>
+    <script src="js/index.mjs?v=1" type="module"></script>
+  </body>
+</html>
